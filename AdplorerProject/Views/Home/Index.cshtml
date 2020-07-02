@@ -1,0 +1,21 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<header class="masthead bg-primary text-white text-center">
+    <div class="container d-flex align-items-center flex-column">
+
+        <h1 class="masthead-heading text-uppercase mb-0">Hello!</h1>
+
+        <div class="divider-custom divider-light">
+            <div class="divider-custom-line"></div>
+            <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+            <div class="divider-custom-line"></div>
+        </div>
+
+        <div class="text-center mt-3">
+            @Html.ActionLink("Show customer data", "GetData", "Customer", null, new { @class = "btn btn-xl btn-outline-light" })
+        </div>
+
+    </div>
+</header>

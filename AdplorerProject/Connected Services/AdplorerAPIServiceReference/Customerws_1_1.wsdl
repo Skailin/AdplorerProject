@@ -1,0 +1,409 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://www.publocity.de/ns/Customer_1_1" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://www.publocity.de/ns/Customer_1_1" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://www.publocity.de/ns/Customer_1_1">
+      <s:element name="CreateCustomerWS">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CustomerDto" type="tns:CustomerDto" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="CustomerDto">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:DtoBase">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="AllUsersList" type="tns:ArrayOfUserDto" />
+              <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="Company" type="tns:CompanyDto" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="DtoBase" />
+      <s:complexType name="CompanyDto">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:DtoBase">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="IdAccountingClient" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="CompanyName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="CompanyNameShort" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="Street" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="Zip" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="City" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="Country" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="Phone" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="Currency" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="IndustryBranch" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="Agency" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="Notes" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="ServiceAgentSales" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="InvoiceTo" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="SendInvoiceBy" type="tns:SendInvoiceBy" />
+              <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="AccountNumber" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="BankCode" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="BankName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="DirectDebitAuthorization" type="tns:DirectDebitAuthorization" />
+              <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="DateOfPayment" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="VatIdentificationNumber" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="TaxRegion" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="AdwordsPayment" type="tns:AdwordsPayment" />
+              <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="HGKMemberNumber" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="DiscountPercent" type="s:float" />
+              <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="TradeFair" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="ServiceAgentSales2" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="RelatedCompany" type="tns:RelatedCompany" />
+              <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="CustomerType" type="tns:CustomerType" />
+              <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="AgencyID" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="MandantID" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="DestinationUrl" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="Placeholder1" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="Placeholder2" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="Placeholder3" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="Placeholder4" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="Placeholder5" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="Placeholder6" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="Placeholder7" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="Placeholder8" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" form="unqualified" name="CompanyID" type="s:int" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:simpleType name="SendInvoiceBy">
+        <s:restriction base="s:string">
+          <s:enumeration value="Letter" />
+          <s:enumeration value="Email" />
+        </s:restriction>
+      </s:simpleType>
+      <s:simpleType name="DirectDebitAuthorization">
+        <s:restriction base="s:string">
+          <s:enumeration value="No" />
+          <s:enumeration value="Yes" />
+          <s:enumeration value="CreditCardAuthorization" />
+        </s:restriction>
+      </s:simpleType>
+      <s:simpleType name="AdwordsPayment">
+        <s:restriction base="s:string">
+          <s:enumeration value="NoPrePayment" />
+          <s:enumeration value="AdvancePayment" />
+          <s:enumeration value="AccountWithClient" />
+        </s:restriction>
+      </s:simpleType>
+      <s:simpleType name="RelatedCompany">
+        <s:restriction base="s:string">
+          <s:enumeration value="No" />
+          <s:enumeration value="Yes" />
+        </s:restriction>
+      </s:simpleType>
+      <s:simpleType name="CustomerType">
+        <s:restriction base="s:string">
+          <s:enumeration value="Private" />
+          <s:enumeration value="Commercial" />
+        </s:restriction>
+      </s:simpleType>
+      <s:complexType name="UserDto">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:DtoBase">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="Salutation" type="tns:Salutation" />
+              <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="CustomerTitle" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="FirstName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="LastName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="Language" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="Email" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="Phone" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="Fax" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="ExternalID" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="AgencyID" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" form="unqualified" name="UserID" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="BCC" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:simpleType name="Salutation">
+        <s:restriction base="s:string">
+          <s:enumeration value="Ms" />
+          <s:enumeration value="Mr" />
+        </s:restriction>
+      </s:simpleType>
+      <s:complexType name="ArrayOfUserDto">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" form="unqualified" name="User" nillable="true" type="tns:UserDto" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CreateCustomerWSResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreateCustomerWSResult" type="tns:CreateCustomerResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="CreateCustomerResponse">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:ResponseBase">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="Customer" type="tns:CustomerDto" />
+              <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="ExistingUserID" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="ExistingCompanyID" type="s:int" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ResponseBase">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Message" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Success" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="ErrorCode" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ControlsValidation" type="tns:ControlsValidation" />
+          <s:element minOccurs="0" maxOccurs="1" name="PartialErrors" type="tns:ArrayOfPartialError" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ControlsValidation">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ControlsValidated" type="tns:ArrayOfString" />
+          <s:element minOccurs="0" maxOccurs="1" name="ControlsNotValidated" type="tns:ArrayOfString" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfPartialError">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="PartialError" nillable="true" type="tns:PartialError" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="PartialError">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="PrimaryID" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="SecondaryID" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="Message" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ErrorLevel" type="tns:PartialErrorLevel" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="PartialErrorLevel">
+        <s:restriction base="s:string">
+          <s:enumeration value="Other" />
+          <s:enumeration value="Campaign" />
+          <s:enumeration value="GeoLocation" />
+          <s:enumeration value="Company" />
+          <s:enumeration value="Order" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="AuthHeader" type="tns:AuthHeader" />
+      <s:complexType name="AuthHeader">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+        </s:sequence>
+        <s:anyAttribute />
+      </s:complexType>
+      <s:element name="UpdateCustomerWS">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CustomerDto" type="tns:CustomerDto" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateCustomerWSResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdateCustomerWSResult" type="tns:UpdateCustomerResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="UpdateCustomerResponse">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:ResponseBase" />
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="GetCustomersByQueryWS">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Query" type="tns:CustomerQueryDto" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="CustomerQueryDto">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:DtoBase">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="QueryItemList" type="tns:ArrayOfCustomerQueryItemDto" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ArrayOfCustomerQueryItemDto">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" form="unqualified" name="QueryItem" nillable="true" type="tns:CustomerQueryItemDto" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CustomerQueryItemDto">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" form="unqualified" name="QueryOperator" type="tns:QueryOperator" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="Value" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" form="unqualified" name="QueryProperty" type="tns:CustomerQueryProperty" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="QueryOperator">
+        <s:restriction base="s:string">
+          <s:enumeration value="Equals" />
+          <s:enumeration value="NotEquals" />
+          <s:enumeration value="Contains" />
+          <s:enumeration value="GreaterThan" />
+          <s:enumeration value="GreaterThanOrEquals" />
+          <s:enumeration value="LessThan" />
+          <s:enumeration value="LessThanOrEquals" />
+          <s:enumeration value="BeginsWith" />
+          <s:enumeration value="EndsWith" />
+          <s:enumeration value="DateFrom" />
+          <s:enumeration value="DateTo" />
+        </s:restriction>
+      </s:simpleType>
+      <s:simpleType name="CustomerQueryProperty">
+        <s:restriction base="s:string">
+          <s:enumeration value="IdAccountingClient" />
+          <s:enumeration value="CompanyID" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="GetCustomersByQueryWSResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCustomersByQueryWSResult" type="tns:GetCustomersResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="GetCustomersResponse">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:ResponseBase">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="CustomerList" type="tns:ArrayOfCustomerDto" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ArrayOfCustomerDto">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" form="unqualified" name="Customer" nillable="true" type="tns:CustomerDto" />
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="CreateCustomerWSSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateCustomerWS" />
+  </wsdl:message>
+  <wsdl:message name="CreateCustomerWSSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateCustomerWSResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateCustomerWSAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="UpdateCustomerWSSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateCustomerWS" />
+  </wsdl:message>
+  <wsdl:message name="UpdateCustomerWSSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateCustomerWSResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateCustomerWSAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetCustomersByQueryWSSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCustomersByQueryWS" />
+  </wsdl:message>
+  <wsdl:message name="GetCustomersByQueryWSSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCustomersByQueryWSResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCustomersByQueryWSAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:portType name="CustomerWSSoap">
+    <wsdl:operation name="CreateCustomerWS">
+      <wsdl:input message="tns:CreateCustomerWSSoapIn" />
+      <wsdl:output message="tns:CreateCustomerWSSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCustomerWS">
+      <wsdl:input message="tns:UpdateCustomerWSSoapIn" />
+      <wsdl:output message="tns:UpdateCustomerWSSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomersByQueryWS">
+      <wsdl:input message="tns:GetCustomersByQueryWSSoapIn" />
+      <wsdl:output message="tns:GetCustomersByQueryWSSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="CustomerWSSoap" type="tns:CustomerWSSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CreateCustomerWS">
+      <soap:operation soapAction="http://www.publocity.de/ns/Customer_1_1/CreateCustomerWS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:CreateCustomerWSAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCustomerWS">
+      <soap:operation soapAction="http://www.publocity.de/ns/Customer_1_1/UpdateCustomerWS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:UpdateCustomerWSAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomersByQueryWS">
+      <soap:operation soapAction="http://www.publocity.de/ns/Customer_1_1/GetCustomersByQueryWS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetCustomersByQueryWSAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="CustomerWSSoap12" type="tns:CustomerWSSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CreateCustomerWS">
+      <soap12:operation soapAction="http://www.publocity.de/ns/Customer_1_1/CreateCustomerWS" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:CreateCustomerWSAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCustomerWS">
+      <soap12:operation soapAction="http://www.publocity.de/ns/Customer_1_1/UpdateCustomerWS" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:UpdateCustomerWSAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomersByQueryWS">
+      <soap12:operation soapAction="http://www.publocity.de/ns/Customer_1_1/GetCustomersByQueryWS" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetCustomersByQueryWSAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CustomerWS">
+    <wsdl:port name="CustomerWSSoap" binding="tns:CustomerWSSoap">
+      <soap:address location="http://layout.adplorer.com/services/Customerws_1_1.asmx" />
+    </wsdl:port>
+    <wsdl:port name="CustomerWSSoap12" binding="tns:CustomerWSSoap12">
+      <soap12:address location="http://layout.adplorer.com/services/Customerws_1_1.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,126 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@model IEnumerable<AdplorerProject.AdplorerAPIServiceReference.CustomerDto>
+
+<section class="page-section">
+    <div class="container">
+
+        <h4 class="page-section-heading text-center text-uppercase text-secondary mt-5">Customer data</h4>
+
+        <div class="divider-custom">
+            <div class="divider-custom-line"></div>
+            <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+            <div class="divider-custom-line"></div>
+        </div>
+
+        <div class="main-content">
+            <div class="row mt-5">
+                <div class="col-lg-6 ml-auto">
+                    <div class="card">
+                        <div class="card-body">
+                            <h3 class="text-center text-uppercase">User information</h3>
+
+                            @foreach (var all in Model)
+                            {
+                                foreach (var user in all.AllUsersList)
+                                {
+                                    <dl class="dl-horizontal pt-3">
+                                        <dt>User ID:</dt>
+                                        <dd>@user.UserID</dd>
+
+                                        <dt>First name:</dt>
+                                        <dd>@user.FirstName</dd>
+
+                                        <dt>Last name:</dt>
+                                        <dd>@user.LastName</dd>
+
+                                        <dt>Language:</dt>
+                                        <dd>@user.Language</dd>
+
+                                        <dt>Email:</dt>
+                                        <dd>@user.Email</dd>
+
+                                        <dt>Phone:</dt>
+                                        <dd>@user.Phone</dd>
+
+                                    </dl>
+                                }
+                            }
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 mr-auto">
+                    <div class="card">
+                        <div class="card-body">
+                            <h3 class="text-center text-uppercase">Company information</h3>
+                            @foreach (var item in Model)
+                            {
+
+                                <dl class="dl-horizontal pt-3">
+                                    <dt>Company ID:</dt>
+                                    <dd>@item.Company.CompanyID</dd>
+
+                                    <dt>Company name:</dt>
+                                    <dd>@item.Company.CompanyName</dd>
+
+                                    <dt>Short company name:</dt>
+                                    <dd>@item.Company.CompanyNameShort</dd>
+
+                                    <dt>Street:</dt>
+                                    <dd>@item.Company.Street</dd>
+
+                                    <dt>Zip:</dt>
+                                    <dd>@item.Company.Zip</dd>
+
+                                    <dt>City:</dt>
+                                    <dd>@item.Company.City</dd>
+
+                                    <dt>Country:</dt>
+                                    <dd>@item.Company.Country</dd>
+
+                                    <dt>Currency:</dt>
+                                    <dd>@item.Company.Currency</dd>
+
+                                    <dt>Industry branch:</dt>
+                                    <dd>@item.Company.IndustryBranch</dd>
+
+                                    <dt>Agency:</dt>
+                                    <dd>@item.Company.Agency</dd>
+
+                                    <dt>Service agent sales:</dt>
+                                    <dd>@item.Company.ServiceAgentSales</dd>
+
+                                    <dt>Invoice to:</dt>
+                                    <dd>@item.Company.InvoiceTo</dd>
+
+                                    <dt>Send invoice by:</dt>
+                                    <dd>@item.Company.SendInvoiceBy</dd>
+
+                                    <dt>Direct debit authorization:</dt>
+                                    <dd>@item.Company.DirectDebitAuthorization</dd>
+
+                                    <dt>Date of payment:</dt>
+                                    <dd>@item.Company.DateOfPayment</dd>
+
+                                    <dt>Trade fair:</dt>
+                                    <dd>@item.Company.TradeFair</dd>
+
+                                    <dt>Service agent sales 2:</dt>
+                                    <dd>@item.Company.ServiceAgentSales2</dd>
+
+                                    <dt>Customer type:</dt>
+                                    <dd>@item.Company.CustomerType</dd>
+
+                                </dl>
+
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
